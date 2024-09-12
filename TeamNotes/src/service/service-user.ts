@@ -12,10 +12,6 @@ export const createUserProfile = (
   username: string,
   email: string,
   password: string,
-  phoneNumber: string,
-  notifications: any,
-  status: string,
-  role: string  = "user",
 ) => {
   const readableDate = new Date().toLocaleString(); 
 
@@ -24,11 +20,6 @@ export const createUserProfile = (
     username,
     email,
     password,
-    phoneNumber,
-    userPhotoURL: "",
-    notifications,
-    status,
-    role,
     createdOnReadable: readableDate,
   });
 };

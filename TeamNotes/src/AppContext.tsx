@@ -1,17 +1,17 @@
 import React, { createContext, useState, ReactNode } from 'react';
 
-interface AppContextType {
+export interface AppContextType {
   user: any; 
   setUser: React.Dispatch<React.SetStateAction<any>>; 
 }
 
-const AppContext = createContext<AppContextType | undefined>(undefined);
+export const AppContext = createContext<AppContextType | undefined>(undefined);
 
 interface AppContextProviderProps {
   children: ReactNode;
 }
 
-export function AppContextProvider({ children }: AppContextProviderProps) {
+const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const [user, setUser] = useState<any>(null); 
 
   return (
@@ -21,4 +21,4 @@ export function AppContextProvider({ children }: AppContextProviderProps) {
   );
 }
 
-export default AppContext;
+export default AppContextProvider;
