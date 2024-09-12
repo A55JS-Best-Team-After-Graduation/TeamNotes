@@ -3,15 +3,15 @@ import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import './App.css'
 import Home from './views/Home';
 import Register from './views/Register';
+import Auth from './hoc/Auth';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={ <Auth> <Home /> </Auth>} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
