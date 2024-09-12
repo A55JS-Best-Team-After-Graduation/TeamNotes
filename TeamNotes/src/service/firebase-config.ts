@@ -13,7 +13,7 @@ const firebaseConfig = {
   storageBucket: "teamsnote-c60cc.appspot.com",
   messagingSenderId: "869311271398",
   appId: "1:869311271398:web:219ce6fb29537b1ff00627",
-  databaseURL:'https://console.firebase.google.com/project/teamsnote-c60cc/database/teamsnote-c60cc-default-rtdb/data/~2F'
+  databaseURL:'https://teamsnote-c60cc-default-rtdb.europe-west1.firebasedatabase.app/'
 };
 
 // Initialize Firebase
