@@ -7,7 +7,7 @@ import Auth from './hoc/Auth';
 import Login from './views/Login/Login';
 import Calendar from './views/Calendar/Calendar';
 import Header from './components/Header/Header';
-
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -24,7 +24,7 @@ function App() {
           <Route path='/calendar' element= {<Calendar />} />
           <Route path="*" element={<div>404 - Page Not Found</div>} />
         </Routes>
-       
+        <Footer />
       </BrowserRouter>
     </>
   )
