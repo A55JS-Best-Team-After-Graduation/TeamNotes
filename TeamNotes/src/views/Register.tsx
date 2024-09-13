@@ -53,7 +53,7 @@ const Register = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
             <h1 className="text-2xl font-bold mb-4">Register</h1>
-            <form onSubmit={handleRegister}  className="flex flex-col space-y-4">
+            <form onSubmit={handleRegister} className="flex flex-col space-y-4">
                 <input
                     className="border border-gray-300 p-2 rounded"
                     type="text"
@@ -61,6 +61,8 @@ const Register = () => {
                     value={form.username}
                     onChange={updateForm("username")}
                 />
+                {error?.username && <div className="text-red-500">{error.username}</div>}
+
                 <input
                     className="border border-gray-300 p-2 rounded"
                     type="email"
@@ -68,6 +70,8 @@ const Register = () => {
                     value={form.email}
                     onChange={updateForm("email")}
                 />
+                {error?.email && <div className="text-red-500">{error.email}</div>}
+
                 <input
                     className="border border-gray-300 p-2 rounded"
                     type="password"
@@ -75,6 +79,8 @@ const Register = () => {
                     value={form.password}
                     onChange={updateForm("password")}
                 />
+                {error?.password && <div className="text-red-500">{error.password}</div>}
+
                 <button type="submit">Register</button>
             </form>
         </div>
