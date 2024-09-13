@@ -6,6 +6,7 @@ import Register from './views/Register/Register';
 import Auth from './hoc/Auth';
 import Login from './views/Login/Login';
 import Calendar from './views/Calendar/Calendar';
+import Header from './components/Header/Header';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-    
+      <Header />
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
           {/* <Route path="/home" element={<Auth> <Home /> </Auth>} /> */}
