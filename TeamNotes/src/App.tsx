@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import { BrowserRouter, Routes, Route, useParams, Navigate } from "react-router-dom";
 import './App.css'
 import Home from './views/Home/Home';
-import Register from './views/Register';
+import Register from './views/Register/Register';
 import Auth from './hoc/Auth';
 import Login from './views/Login/Login';
 import Calendar from './views/Calendar/Calendar';
