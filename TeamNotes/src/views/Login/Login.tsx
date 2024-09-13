@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppContext } from "../../AppContext";
+import { useAppContext } from "../../context/AppContext";
 
 const Login= ()=>{
     const [form, setForm] = useState({

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import firebaseConfig from "../../service/firebase-config";
-import { useAppContext } from "../../AppContext";
+import { useAppContext } from "../../context/AppContext";
 
 const Header=()=>{
     const navigate = useNavigate();
