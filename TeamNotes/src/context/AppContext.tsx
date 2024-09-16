@@ -23,7 +23,7 @@
 
 // export default AppContextProvider;
 
-import React, { type Dispatch, type SetStateAction } from 'react';
+import React, { type Dispatch, type SetStateAction, useState, ReactNode } from 'react';
 
 export type User = {
   username: string;
@@ -58,7 +58,31 @@ export const useAppContext = () => {
 };
 
 
+interface AppContextProviderProps {
+  children: ReactNode;
+}
 
+// Create AppContextProvider component
+export const AppContextProvider = ({ children }: AppContextProviderProps) => {
+  const [contextState, setContext] = useState<{ user: User, userData: UserData }>({
+    user: { username: '', email: '' }, // ! redundant: since we have userData, we don't need to store username and email in user
+    userData: {
+      username: '',
+      email: '',
+      uid: '',
+      phoneNumber: 0,
+      image: '',
+      activity: '',
+      createdOn: new Date(),
+    },
+  });
+
+  return (
+    <AppContext.Provider value={{ ...contextState, setContext }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
 
 
 

@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
-import { AppContext } from '../AppContext';
-import { registerUser, createUserProfile } from '../service/service-user';
-import { validateRegistrationForm } from '../service/validation';
+import { AppContext } from '../../context/AppContext';
+import { registerUser, createUserProfile } from '../../service/service-user';
+import { validateRegistrationForm } from '../../validation/validation';
 
 const Register = () => {
     const context = useContext(AppContext);
@@ -11,7 +11,7 @@ const Register = () => {
         return <div>Loading...</div>;
     }
 
-    const { setUser } = context;
+    const { userData, setContext } = context;
 
     const [form, setForm] = useState({
         uid: '',
@@ -44,7 +44,16 @@ const Register = () => {
                 form.password,
             );
 
-            setUser(user);
+            setContext((prevState) => ({
+                ...prevState, 
+                userData: {
+                  ...prevState.userData, 
+                  uid: user.uid,
+                  username: form.username,
+                  email: form.email,
+                }
+              }));
+            
         } catch (error) {
             console.error('Error registering user:', error);
         }
