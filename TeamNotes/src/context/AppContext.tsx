@@ -23,8 +23,8 @@ export type UserData = {
 }
 
 export interface AppContextType {
-  userData: UserData 
-  setContext: Dispatch<SetStateAction<{ userData: UserData }>>
+  userData: UserData | null 
+  setContext: Dispatch<SetStateAction<{ userData: UserData | null }>>
 }
 
 export const AppContext = React.createContext<AppContextType | undefined>(undefined);
@@ -42,8 +42,8 @@ interface AppContextProviderProps {
 }
 
 export const AppContextProvider = ({ children }: AppContextProviderProps) => {
-  const [contextState, setContext] = useState<{ userData: UserData }>({
-    userData: defaultUserData,
+  const [contextState, setContext] = useState<{ userData: UserData | null }>({
+    userData: null, 
   });
 
   React.useEffect(() => {

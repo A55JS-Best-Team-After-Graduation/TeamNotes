@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { AppContext } from '../../context/AppContext';
+import { AppContext, defaultUserData } from '../../context/AppContext';
 import { registerUser, createUserProfile } from '../../service/service-user';
 import { validateRegistrationForm } from '../../validation/validation';
 
@@ -44,15 +44,14 @@ const Register = () => {
                 form.password,
             );
 
-            setContext((prevState) => ({
-                ...prevState, 
+            setContext({
                 userData: {
-                  ...prevState.userData, 
-                  uid: user.uid,
-                  username: form.username,
-                  email: form.email,
-                }
-              }));
+                    ...defaultUserData, 
+                    uid: user.uid,
+                    username: form.username,
+                    email: form.email,
+                  }
+            });
             
         } catch (error) {
             console.error('Error registering user:', error);

@@ -9,7 +9,7 @@ const Header=()=>{
 
     const logout = async () => {
         await logoutUser();
-        setContext({ userData: defaultUserData });
+        setContext({ userData: null });
         navigate('/login');
       }
       const profile = () => {
