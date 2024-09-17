@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 // import { Calendar, momentLocalizer, SlotInfo } from 'react-big-calendar';
 // import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import './MyCalendar.css';
+// import 'react-big-calendar/lib/css/react-big-calendar.css';
+// import './MyCalendar.css';
 import { getDatabase, onValue, ref } from 'firebase/database';
 // import { useAppContext } from '../../context/appContext';
 // import { getAllUsers } from '../../service/user';

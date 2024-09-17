@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import firebaseConfig from "../../service/firebase-config";
-import { useAppContext } from "../../context/AppContext";
+// import firebaseConfig from "../../service/firebase-config";
+import { useAppContext, defaultUserData } from "../../context/AppContext";
+import { logoutUser } from "../../service/service-user";
 
 const Header=()=>{
     const navigate = useNavigate();
-    const { user, userData, setContext } = useAppContext();
+    const { userData, setContext } = useAppContext();
 
     const logout = async () => {
         await logoutUser();
-        setContext({ user: null, userData: null });
+        setContext({ userData: null });
         navigate('/login');
       }
       const profile = () => {
