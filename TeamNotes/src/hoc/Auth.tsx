@@ -4,8 +4,8 @@ import { AppContext,AppContextType } from '../context/AppContext';
 
 const Auth = ({ children }: any) => {
 const context = useContext(AppContext);
-const { user } = context as AppContextType;
-if (!user) {
+const { userData } = context as AppContextType;
+if (userData.uid.trim() === '') {
     return <Navigate to="/login" />
   }
 return(

@@ -11,7 +11,7 @@ const Register = () => {
         return <div>Loading...</div>;
     }
 
-    const { userData, setContext } = context;
+    const { setContext } = context;
 
     const [form, setForm] = useState({
         uid: '',

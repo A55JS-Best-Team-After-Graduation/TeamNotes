@@ -17,8 +17,8 @@ function App() {
       <Header />
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
-          {/* <Route path="/home" element={<Auth> <Home /> </Auth>} /> */}
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Auth> <Home /> </Auth>} />
+          {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/register" element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/calendar' element= {<Calendar />} />
